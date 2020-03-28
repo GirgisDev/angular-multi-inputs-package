@@ -1,0 +1,81 @@
+<form
+  name="multiInputForm"
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)"
+  [ngClass]="formClasses">
+  <div 
+    [class.multi-input__item]="!inputGroupClasses"
+    [ngClass]="inputGroupClasses">
+    <label
+      [class.multi-input__item__label]="!labelClasses"
+      [ngClass]="labelClasses"
+      [for]="title">
+      {{ labelText }}
+    </label>
+    <input
+      [id]="title"
+      [type]="type"
+      [tabIndex]="tabIndex"
+      [name]="name"
+      [(ngModel)]="valuesArray[0]"
+      #item="ngModel"
+      [placeholder]="placeholder"
+      [required]="required"
+      [pattern]="pattern || ''"
+      [class.multi-input__item__field]="!fieldClasses"
+      [ngClass]="fieldClasses"
+      (input)="emitValues(item)"
+    />
+    <div 
+      *ngIf="item.touched && item.errors" 
+      [class.multi-input__item__err]="!errClasses"
+      [ngClass]="errClasses">
+      <div *ngIf="item.errors['required']">{{ requiredFieldMsg }}</div>
+      <div *ngIf="item.errors['pattern']">{{ invalidValueMsg }}</div>
+    </div>
+    <!-- <button [id]="'submit'+tabIndex" [hidden]="true">submit</button> -->
+  </div>
+
+  <ng-template [ngIf]="valuesArray.length > 1">
+    <div
+      *ngFor="let item of (valuesArray.slice(1)); let i = index; last as last; trackBy: trackByFn"
+      [class.multi-input__item]="!inputGroupClasses"
+      [ngClass]="inputGroupClasses">
+      <label
+        [class.multi-input__item__label]="!labelClasses"
+        [ngClass]="labelClasses"
+        [for]="title">
+        {{ labelText ? labelText + ' ' + (i+2) : title + ' ' + (i + 2) }}
+      </label>
+      <input
+        [id]="title + i"
+        [type]="type"
+        [tabIndex]="tabIndex + i"
+        [ngClass]="{
+          'multi-input__item__field
+          multi-input__item__field--with-icon': !fieldClasses
+        }"
+        [class]="fieldClasses ? fieldClasses : ''"
+        [name]="name + i"
+        [placeholder]="placeholder + ' ' + (i + 2)"
+        [(ngModel)]="valuesArray[i+1]"
+        (input)="emitValues()">
+      <img
+        (click)="removeInput(i+1)"
+        [class.multi-input__item__icon]="!removeIconClasses"
+        [ngClass]="removeIconClasses"
+        [src]="iconSrc"
+        alt="remove input field icon">
+    </div>
+  </ng-template>
+  <div
+    *ngIf="valuesArray.length < limit"
+    (click)="addInput($event)"
+    [ngClass]="{
+      'multi-input__btn  multi-input__btn--primary  
+      multi-input__btn--right': !btnClasses 
+    }"
+    [class]="btnClasses ? btnClasses : ''">
+    {{ btnText }}
+  </div>
+</form>

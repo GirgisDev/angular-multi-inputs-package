@@ -1,0 +1,90 @@
+.multi-input__item {
+  margin: 16px 0;
+  padding-top: 16px;
+  position: relative;
+  width: inherit;
+  min-width: 200px;
+}
+
+.multi-input__item__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.multi-input__item__field {
+  width: 100%;
+  padding: 0 10px;
+  height: 36px;
+  color: #454545;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-out;
+}
+.multi-input__item__field--with-icon {
+  width: calc(100% - 30px);
+}
+.multi-input__item__field:focus {
+  outline: none;
+}
+
+.multi-input__item__field.ng-invalid.ng-dirty,
+.multi-input__item__field.ng-invalid.ng-touched {
+  border-color: #e7292b;
+}
+
+.multi-input__item__icon {
+  width: 16px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+}
+
+.multi-input__item__err {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 1px);
+  color: #e7292b;
+  font-size: 11px;
+}
+
+.multi-input__btn {
+  height: 30px;
+  align-items: center;
+  min-width: 40px;
+  padding: 0 20px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  display: inline-flex;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  user-select: none;
+}
+
+.multi-input__btn:focus {
+  outline: none;
+}
+
+.multi-input__btn--primary {
+  background-color: #e7292b;
+  color: #fff;
+  border: 1px solid;
+}
+
+.multi-input__btn--primary:hover {
+  border-color: #e7299f;
+}
+
+.multi-input__btn--right {
+  float: right;
+}

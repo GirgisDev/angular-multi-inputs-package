@@ -1,0 +1,34 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  margin-left: 240px;
+  padding: 0;
+}
+
+.my-form {
+  width: 340px;
+  margin-top: 60px;
+}
+
+
+.custom-input__item__field {
+  width: 100%;
+  padding: 0 4px;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: border-color 0.5s ease-out;
+}
+.custom-input__item__field:focus {
+  outline: none;
+}
+.custom-input__item__field:required {
+  border-color: palegreen;
+}
+.custom-input__item__field:invalid {
+  border-color: salmon;
+}
