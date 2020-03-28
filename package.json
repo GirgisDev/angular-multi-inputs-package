@@ -1,6 +1,6 @@
 {
   "name": "ngx-multi-inputs",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,6 +11,18 @@
     "packagr": "ng-packagr -p ng-package.json"
   },
   "private": false,
+  "license": "MIT",
+  "author": "Girgis Abdel-malak <girgis.engineer@gmail.com> (https://github.com/GirgisDev)",
+  "description": "Angular package that let's you easily handle multiple inputs and emit back array of values",
+  "homepage": "https://github.com/GirgisDev/angular-multi-inputs-package",
+  "keywords": [
+    "Angular",
+    "input",
+    "multiple inputs",
+    "multi inputs",
+    "angular multiple inputs",
+    "Angular package"
+  ],
   "dependencies": {
   },
   "peerDependencies": {

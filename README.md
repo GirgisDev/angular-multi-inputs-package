@@ -1,6 +1,6 @@
 # Angular Multi-Input-Array Component Ngx-multi-inputs (Angular 2+)
 
-Component will return array of input fields values which you sepcify its i.e. text, email, etc..
+Component will return array of input fields values which you sepcify its type i.e. text, email, etc..
 
 [![](https://i.ibb.co/MZT6zcH/testing-inputs.gif)](https://i.ibb.co/MZT6zcH/testing-inputs.gif)
 
