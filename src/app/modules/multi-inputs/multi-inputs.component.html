@@ -24,8 +24,7 @@
       [pattern]="pattern || ''"
       [class.multi-input__item__field]="!fieldClasses"
       [ngClass]="fieldClasses"
-      (input)="emitValues(item)"
-    />
+      (input)="emitValues(item)">
     <div 
       *ngIf="item.touched && item.errors" 
       [class.multi-input__item__err]="!errClasses"
@@ -70,7 +69,7 @@
   </ng-template>
   <div
     *ngIf="valuesArray.length < limit"
-    (click)="addInput($event)"
+    (click)="addInput()"
     [ngClass]="{
       'multi-input__btn  multi-input__btn--primary  
       multi-input__btn--right': !btnClasses 

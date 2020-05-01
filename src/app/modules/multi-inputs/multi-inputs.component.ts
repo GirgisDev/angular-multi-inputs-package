@@ -57,7 +57,7 @@ export class MultiInputsComponent implements OnInit {
     this.inputValues.emit(valuesArray);
   }
 
-  addInput(e) {
+  addInput() {
     if (this.valuesArray.length >= this.limit) return;
     this.valuesArray.push("");
   }
